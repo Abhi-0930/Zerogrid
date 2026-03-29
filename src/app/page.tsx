@@ -3,12 +3,10 @@ import styles from "./page.module.css";
 
 export default function Home() {
   const navItems = [
-    { label: "Process", href: "#process" },
     { label: "Services", href: "#services" },
-    { label: "Benefits", href: "#services" },
-    { label: "About", href: "#process" },
-    { label: "Plans", href: "#contact" },
+    { label: "Work", href: "#process" },
     { label: "FAQ", href: "#contact" },
+    { label: "Contact", href: "#contact" },
   ];
 
   const services = [
