@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -37,15 +38,16 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <header className={styles.nav}>
-        <div className={styles.brand}>
-          <div className={styles.mark} aria-hidden="true">
-            <span className={styles.markTop} />
-            <span className={styles.markBottom} />
-          </div>
-          <span className={styles.brandText}>
-            Zero<span>grid</span>
-          </span>
-        </div>
+        <a className={styles.brand} href="#" aria-label="Zerogrid home">
+          <Image
+            className={styles.brandLogoImage}
+            src="/logo.png"
+            alt="Zerogrid logo"
+            width={300}
+            height={80}
+            priority
+          />
+        </a>
         <nav className={styles.navLinks}>
           {navItems.map((item) => (
             <a key={item.label} href={item.href}>
