@@ -28,9 +28,11 @@
 }
 
 .brandLogoImage {
-  width: auto;
-  height: 2.8rem;
-  object-fit: contain;
+  width: 13.2rem;
+  height: 3.2rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0.45rem;
 }
 
 .navLinks {
@@ -301,11 +303,11 @@
   }
 
   .brand {
-    max-width: 9.5rem;
+    max-width: 9.6rem;
   }
 
   .brandLogoImage {
-    height: 2rem;
+    height: 2.35rem;
     width: 100%;
   }
 

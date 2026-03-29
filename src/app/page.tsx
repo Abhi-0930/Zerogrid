@@ -41,10 +41,10 @@ export default function Home() {
         <a className={styles.brand} href="#" aria-label="Zerogrid home">
           <Image
             className={styles.brandLogoImage}
-            src="/logo.png"
+            src="/zerogrid-logo-bg-remove.png"
             alt="Zerogrid logo"
-            width={300}
-            height={80}
+            width={320}
+            height={72}
             priority
           />
         </a>
