@@ -1,0 +1,43 @@
+:root {
+  --zg-bg: #eef4fb;
+  --zg-surface: #fbfdff;
+  --zg-text: #122238;
+  --zg-muted: #56667a;
+  --zg-accent: #207fce;
+  --zg-border: #d8e4f2;
+}
+
+html {
+  height: 100%;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: var(--zg-text);
+  background:
+    linear-gradient(120deg, rgba(168, 206, 240, 0.35), transparent 40%),
+    radial-gradient(circle at 85% 8%, rgba(35, 140, 227, 0.2), transparent 30%),
+    var(--zg-bg);
+  font-family: var(--font-space-grotesk), "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
