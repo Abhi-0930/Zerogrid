@@ -1,11 +1,11 @@
 .page {
   min-height: 100vh;
   color: var(--zg-text);
+  padding-top: 6.4rem;
 }
 
 .nav {
   width: min(1120px, calc(100% - 3rem));
-  margin: 1rem auto 0;
   padding: 0.6rem 0.7rem;
   border: 1px solid #d9dee8;
   border-radius: 999px;
@@ -15,7 +15,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
   top: 0.75rem;
   z-index: 30;
   animation: riseIn 0.7s ease-out;
@@ -336,9 +338,12 @@
 }
 
 @media (max-width: 760px) {
+  .page {
+    padding-top: 5.3rem;
+  }
+
   .nav {
     width: calc(100% - 3.4rem);
-    margin-top: 0.95rem;
     padding: 0.4rem 0.5rem;
     border-radius: 0.78rem;
     top: 0.72rem;
@@ -376,8 +381,11 @@
 
   .mobileMenu {
     display: grid;
+    position: fixed;
+    left: 50%;
     width: calc(100% - 3.4rem);
-    margin: 0.48rem auto 0;
+    margin: 0;
+    top: 4rem;
     border: 1px solid #d9dee8;
     border-radius: 0.78rem;
     background: rgba(245, 247, 252, 0.97);
@@ -386,15 +394,16 @@
     max-height: 0;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-5px);
+    transform: translate(-50%, -5px);
     transition: max-height 0.22s ease, opacity 0.2s ease, transform 0.2s ease;
+    z-index: 29;
   }
 
   .mobileMenuOpen {
     max-height: 240px;
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(0);
+    transform: translate(-50%, 0);
   }
 
   .mobileMenu a {
