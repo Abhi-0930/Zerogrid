@@ -92,6 +92,23 @@
   height: 0.1rem;
   border-radius: 999px;
   background: #1f2b3a;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hamburgerButtonOpen span:nth-child(1) {
+  transform: translateY(0.3rem) rotate(45deg);
+}
+
+.hamburgerButtonOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburgerButtonOpen span:nth-child(3) {
+  transform: translateY(-0.3rem) rotate(-45deg);
+}
+
+.mobileMenu {
+  display: none;
 }
 
 .main {
@@ -320,11 +337,11 @@
 
 @media (max-width: 760px) {
   .nav {
-    width: calc(100% - 1.5rem);
-    margin-top: 0.6rem;
-    padding: 0.5rem;
-    border-radius: 0.9rem;
-    top: 0.4rem;
+    width: calc(100% - 3rem);
+    margin-top: 0.95rem;
+    padding: 0.52rem 0.62rem;
+    border-radius: 0.78rem;
+    top: 0.72rem;
   }
 
   .brand {
@@ -337,8 +354,8 @@
 
   .brandLogoIcon {
     display: block;
-    width: 2.7rem;
-    height: 2.7rem;
+    width: 2.5rem;
+    height: 2.5rem;
     object-fit: contain;
   }
 
@@ -352,6 +369,43 @@
 
   .hamburgerButton {
     display: inline-flex;
+    width: 2.45rem;
+    height: 2.45rem;
+    border-radius: 0.58rem;
+  }
+
+  .mobileMenu {
+    display: grid;
+    width: calc(100% - 3rem);
+    margin: 0.48rem auto 0;
+    border: 1px solid #d9dee8;
+    border-radius: 0.78rem;
+    background: rgba(245, 247, 252, 0.97);
+    box-shadow: 0 8px 20px rgba(23, 40, 64, 0.08);
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-5px);
+    transition: max-height 0.22s ease, opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .mobileMenuOpen {
+    max-height: 240px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .mobileMenu a {
+    padding: 0.84rem 1rem;
+    font-size: 0.9rem;
+    color: #243246;
+    border-top: 1px solid #e4e9f2;
+  }
+
+  .mobileMenu a:first-child {
+    border-top: 0;
   }
 
   .main {

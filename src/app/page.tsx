@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import styles from "./page.module.css";
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const navItems = [
     { label: "Services", href: "#services" },
     { label: "Work", href: "#process" },
@@ -64,12 +69,34 @@ export default function Home() {
         <a className={styles.navCta} href="#contact">
           Book a call
         </a>
-        <button className={styles.hamburgerButton} type="button" aria-label="Open menu">
+        <button
+          className={`${styles.hamburgerButton} ${isMobileMenuOpen ? styles.hamburgerButtonOpen : ""}`}
+          type="button"
+          aria-label="Open menu"
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-nav-menu"
+          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+        >
           <span />
           <span />
           <span />
         </button>
       </header>
+
+      <nav
+        id="mobile-nav-menu"
+        className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.mobileMenuOpen : ""}`}
+      >
+        {navItems.map((item) => (
+          <a
+            key={item.label}
+            href={item.href}
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
 
       <main className={styles.main}>
         <section className={styles.hero}>
