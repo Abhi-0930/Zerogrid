@@ -1,6 +1,15 @@
 import styles from "./page.module.css";
 
 export default function Home() {
+  const navItems = [
+    { label: "Process", href: "#process" },
+    { label: "Services", href: "#services" },
+    { label: "Benefits", href: "#services" },
+    { label: "About", href: "#process" },
+    { label: "Plans", href: "#contact" },
+    { label: "FAQ", href: "#contact" },
+  ];
+
   const services = [
     {
       title: "AI Workflow Design",
@@ -29,14 +38,24 @@ export default function Home() {
     <div className={styles.page}>
       <header className={styles.nav}>
         <div className={styles.brand}>
-          <div className={styles.mark}>zi</div>
-          <span>Zerogrid</span>
+          <div className={styles.mark} aria-hidden="true">
+            <span className={styles.markTop} />
+            <span className={styles.markBottom} />
+          </div>
+          <span className={styles.brandText}>
+            Zero<span>grid</span>
+          </span>
         </div>
         <nav className={styles.navLinks}>
-          <a href="#services">Services</a>
-          <a href="#process">Process</a>
-          <a href="#contact">Contact</a>
+          {navItems.map((item) => (
+            <a key={item.label} href={item.href}>
+              {item.label}
+            </a>
+          ))}
         </nav>
+        <a className={styles.navCta} href="#contact">
+          Book a call
+        </a>
       </header>
 
       <main className={styles.main}>
