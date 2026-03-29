@@ -38,11 +38,19 @@ export default function Home() {
       <header className={styles.nav}>
         <a className={styles.brand} href="#" aria-label="Zerogrid home">
           <Image
-            className={styles.brandLogoImage}
+            className={styles.brandLogoWordmark}
             src="/zerogrid-logo-bg-remove.png"
             alt="Zerogrid logo"
             width={320}
             height={72}
+            priority
+          />
+          <Image
+            className={styles.brandLogoIcon}
+            src="/zerogrid-logo-only.png"
+            alt="Zerogrid logo icon"
+            width={64}
+            height={64}
             priority
           />
         </a>
@@ -56,6 +64,11 @@ export default function Home() {
         <a className={styles.navCta} href="#contact">
           Book a call
         </a>
+        <button className={styles.hamburgerButton} type="button" aria-label="Open menu">
+          <span />
+          <span />
+          <span />
+        </button>
       </header>
 
       <main className={styles.main}>
