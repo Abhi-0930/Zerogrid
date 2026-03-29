@@ -404,6 +404,17 @@
     border-top: 1px solid #e4e9f2;
   }
 
+  .mobileMenuCta {
+    margin: 0.65rem;
+    border-radius: 0.62rem;
+    border-top: 0 !important;
+    background: linear-gradient(150deg, #7380fa 0%, #5f6fe8 100%);
+    color: #fff !important;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 8px 16px rgba(94, 110, 232, 0.28);
+  }
+
   .mobileMenu a:first-child {
     border-top: 0;
   }

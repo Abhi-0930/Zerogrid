@@ -96,6 +96,13 @@ export default function Home() {
             {item.label}
           </a>
         ))}
+        <a
+          href="#contact"
+          className={styles.mobileMenuCta}
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
+          Book a call
+        </a>
       </nav>
 
       <main className={styles.main}>
