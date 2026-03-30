@@ -8,10 +8,10 @@ export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "Company", href: "#process", hasCaret: true },
-    { label: "Projects", href: "#services", badge: "New" },
-    { label: "Blog", href: "#contact" },
-    { label: "About us", href: "#contact" },
+    { label: "Services", href: "#services" },
+    { label: "Work", href: "#process" },
+    { label: "FAQ", href: "#contact" },
+    { label: "Contact", href: "#contact" },
   ];
 
   const services = [
@@ -44,18 +44,10 @@ export default function Home() {
         <a className={styles.brand} href="#" aria-label="Zerogrid home">
           <Image
             className={styles.brandLogoWordmark}
-            src="/logo.png"
+            src="/zerogrid-logo-bg-remove.png"
             alt="Zerogrid logo"
             width={300}
             height={80}
-            priority
-          />
-          <Image
-            className={styles.brandLogoIcon}
-            src="/zerogrid-logo-only.png"
-            alt="Zerogrid logo icon"
-            width={64}
-            height={64}
             priority
           />
         </a>
@@ -63,13 +55,11 @@ export default function Home() {
           {navItems.map((item) => (
             <a key={item.label} href={item.href} className={styles.navItemLink}>
               <span>{item.label}</span>
-              {item.hasCaret ? <span className={styles.navCaret}>v</span> : null}
-              {item.badge ? <span className={styles.navBadge}>{item.badge}</span> : null}
             </a>
           ))}
         </nav>
         <a className={styles.navCta} href="#contact">
-          <span>Get Template</span>
+          <span>Book a call</span>
           <span className={styles.navCtaIcon}>{"->"}</span>
         </a>
         <button
@@ -106,7 +96,7 @@ export default function Home() {
           className={styles.mobileMenuCta}
           onClick={() => setIsMobileMenuOpen(false)}
         >
-          Get Template
+          Book a call
         </a>
       </nav>
 
