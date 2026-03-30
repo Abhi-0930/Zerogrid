@@ -9,17 +9,17 @@
   content: "";
   position: absolute;
   inset: 0 0 auto 0;
-  height: 150px;
+  height: min(78vh, 760px);
   background:
-    radial-gradient(circle, #d4d9e0 1.1px, transparent 1.1px) 0 0 / 20px 20px,
-    #eceff4;
+    radial-gradient(circle, rgba(196, 203, 214, 0.55) 1px, transparent 1px) 0 0 / 18px 18px,
+    #f1f3f7;
   z-index: 0;
 }
 
 .nav {
-  width: min(1320px, calc(100% - 4.2rem));
+  width: min(1400px, calc(100% - 3rem));
   margin: 0 auto;
-  padding: 0.38rem 0.55rem;
+  padding: 0.58rem 0.85rem;
   border: 1px solid #e1e5ec;
   border-radius: 999px;
   background: #ffffff;
@@ -35,15 +35,16 @@
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  padding-left: 1rem;
+  padding-left: 0;
   flex-shrink: 0;
 }
 
 .brandLogoWordmark {
   display: block;
-  width: auto;
-  height: 7rem;
-  object-fit: contain;
+  width: 14.2rem;
+  height: 2.65rem;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .navLinks {
@@ -59,12 +60,15 @@
   display: inline-flex;
   align-items: center;
   gap: 0;
+  padding: 0.72rem 1.6rem;
+  border-radius: 999px;
   font-size: clamp(0.95rem, 1vw, 1.05rem);
-  transition: opacity 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .navItemLink:hover {
-  opacity: 0.7;
+  background: #eceef3;
+  color: #0e1420;
 }
 
 .navCta {
@@ -97,7 +101,15 @@
   border-radius: 999px;
   border: 1px solid #2c3547;
   background: #192236;
-  font-size: 0.9rem !important;
+  font-size: 1rem !important;
+  line-height: 1;
+  transition: transform 0.22s ease, width 0.22s ease, background 0.22s ease;
+}
+
+.navCta:hover .navCtaIcon {
+  width: 2.45rem;
+  transform: translateX(3px);
+  background: #222e45;
 }
 
 .hamburgerButton {
@@ -159,11 +171,11 @@
 }
 
 .hero {
-  padding: clamp(1.8rem, 3vw, 3.6rem);
-  background:
-    radial-gradient(circle at 12% 0%, rgba(45, 139, 230, 0.2), transparent 42%),
-    radial-gradient(circle at 90% 14%, rgba(12, 31, 53, 0.15), transparent 34%),
-    var(--zg-surface);
+  padding: clamp(2.2rem, 4.5vw, 5.2rem) clamp(1rem, 3vw, 2rem);
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  text-align: center;
 }
 
 .kicker {
@@ -185,6 +197,8 @@
   line-height: 1.05;
   letter-spacing: -0.035em;
   max-width: 14ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .heroText {
@@ -193,6 +207,8 @@
   color: var(--zg-muted);
   font-size: 1.06rem;
   line-height: 1.75;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ctas {
@@ -200,21 +216,46 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+  justify-content: center;
 }
 
 .primary,
 .secondary {
   padding: 0.8rem 1.2rem;
-  border-radius: 0.8rem;
+  border-radius: 999px;
   font-weight: 600;
   font-size: 0.95rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .primary {
-  background: linear-gradient(130deg, #0c1f35, #1d89de);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.36rem 0.44rem 0.36rem 1.18rem;
+  background: #050d1d;
+  border: 1px solid #1e2738;
   color: #fff;
-  box-shadow: 0 12px 26px rgba(28, 135, 220, 0.34);
+  box-shadow: 0 10px 24px rgba(5, 13, 29, 0.26);
+}
+
+.primaryCtaIcon {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  border: 1px solid #2c3547;
+  background: #192236;
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: transform 0.22s ease, width 0.22s ease, background 0.22s ease;
+}
+
+.primary:hover .primaryCtaIcon {
+  width: 2.2rem;
+  transform: translateX(3px);
+  background: #222e45;
 }
 
 .primary:hover {
@@ -237,6 +278,9 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.9rem;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .metrics div {
@@ -370,24 +414,28 @@
   }
 
   .page::before {
-    height: 110px;
+    height: min(74vh, 560px);
   }
 
   .nav {
-    width: calc(100% - 1.7rem);
-    padding: 0.45rem 0.55rem;
-    border-radius: 0.78rem;
+    width: calc(100% - 1rem);
+    padding: 0.5rem 0.62rem;
+    border-radius: 999px;
+    border: 1px solid #f0f3f9;
+    box-shadow: none;
   }
 
   .brand {
     max-width: none;
-    padding-left: 0.35rem;
+    padding-left: 0;
   }
 
   .brandLogoWordmark {
     display: block;
-    width: auto;
-    height: 2.05rem;
+    width: 8.8rem;
+    height: 1.65rem;
+    object-fit: cover;
+    object-position: center center;
   }
 
   .navLinks {
@@ -398,69 +446,7 @@
     display: none;
   }
 
-  .hamburgerButton {
-    display: inline-flex;
-    width: 2.55rem;
-    height: 2.55rem;
-    border-radius: 0.65rem;
-  }
 
-  .mobileMenu {
-    display: grid;
-    position: absolute;
-    left: 50%;
-    width: calc(100% - 1.7rem);
-    margin: 0;
-    top: 4.65rem;
-    border: 1px solid #d9dee8;
-    border-radius: 0.95rem;
-    background: rgba(236, 242, 251, 0.99);
-    box-shadow: 0 14px 28px rgba(23, 40, 64, 0.12);
-    overflow: auto;
-    max-height: 0;
-    opacity: 0;
-    pointer-events: none;
-    transform: translate(-50%, -5px);
-    transition: max-height 0.22s ease, opacity 0.2s ease, transform 0.2s ease;
-    z-index: 29;
-  }
-
-  .mobileMenuOpen {
-    max-height: min(70vh, 430px);
-    opacity: 1;
-    pointer-events: auto;
-    transform: translate(-50%, 0);
-  }
-
-  .mobileMenuLinks {
-    display: grid;
-    gap: 0.45rem;
-    padding: 0.65rem 0.45rem 0.2rem;
-  }
-
-  .mobileMenuLinks a {
-    display: block;
-    padding: 1rem 1rem;
-    font-size: 0.98rem;
-    color: #243246;
-    border: 1px solid #e4e9f2;
-    border-radius: 0.65rem;
-    background: #ffffff;
-  }
-
-  .mobileMenuCta {
-    display: block;
-    margin: 0.5rem 0.45rem 0.65rem;
-    padding: 0.95rem 1rem;
-    border-radius: 0.62rem;
-    border: 0 !important;
-    background: linear-gradient(150deg, #7380fa 0%, #5f6fe8 100%);
-    color: #fff !important;
-    text-align: center;
-    font-weight: 600;
-    font-size: 0.95rem;
-    box-shadow: 0 8px 16px rgba(94, 110, 232, 0.28);
-  }
 
   .main {
     width: calc(100% - 1.5rem);

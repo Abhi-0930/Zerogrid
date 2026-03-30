@@ -1,3 +1,35 @@
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-900.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --zg-bg: #eef4fb;
   --zg-surface: #fbfdff;
@@ -26,7 +58,7 @@ body {
     linear-gradient(120deg, rgba(168, 206, 240, 0.35), transparent 40%),
     radial-gradient(circle at 85% 8%, rgba(35, 140, 227, 0.2), transparent 30%),
     var(--zg-bg);
-  font-family: var(--font-inter), "Segoe UI", sans-serif;
+  font-family: "Satoshi";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -37,7 +69,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-poppins), "Segoe UI", sans-serif;
+  font-family: "Satoshi";
 }
 
 * {

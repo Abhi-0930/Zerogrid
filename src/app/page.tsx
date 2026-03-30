@@ -5,7 +5,7 @@ import { useState } from "react";
 import styles from "./page.module.css";
 
 export default function Home() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
 
   const navItems = [
     { label: "Services", href: "#services" },
@@ -59,46 +59,13 @@ export default function Home() {
           ))}
         </nav>
         <a className={styles.navCta} href="#contact">
-          <span>Book a call</span>
-          <span className={styles.navCtaIcon}>{"->"}</span>
+          <span>Book a 30-Min Call</span>
+          <span className={styles.navCtaIcon}>{"→"}</span>
         </a>
-        <button
-          className={`${styles.hamburgerButton} ${isMobileMenuOpen ? styles.hamburgerButtonOpen : ""}`}
-          type="button"
-          aria-label="Open menu"
-          aria-expanded={isMobileMenuOpen}
-          aria-controls="mobile-nav-menu"
-          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
+
       </header>
 
-      <nav
-        id="mobile-nav-menu"
-        className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.mobileMenuOpen : ""}`}
-      >
-        <div className={styles.mobileMenuLinks}>
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
-        <a
-          href="#contact"
-          className={styles.mobileMenuCta}
-          onClick={() => setIsMobileMenuOpen(false)}
-        >
-          Book a call
-        </a>
-      </nav>
+
 
       <main className={styles.main}>
         <section className={styles.hero}>
@@ -110,10 +77,8 @@ export default function Home() {
           </p>
           <div className={styles.ctas}>
             <a className={styles.primary} href="#contact">
-              Book a Discovery Call
-            </a>
-            <a className={styles.secondary} href="#services">
-              Explore Services
+              <span>Book a 30-Min Call</span>
+              <span className={styles.primaryCtaIcon}>{"→"}</span>
             </a>
           </div>
           <div className={styles.metrics}>
