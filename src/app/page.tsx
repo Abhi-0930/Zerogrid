@@ -8,10 +8,12 @@ export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
+    { label: "Process", href: "#process" },
     { label: "Services", href: "#services" },
-    { label: "Work", href: "#process" },
+    { label: "Benefits", href: "#services" },
+    { label: "About", href: "#process" },
+    { label: "Plans", href: "#contact" },
     { label: "FAQ", href: "#contact" },
-    { label: "Contact", href: "#contact" },
   ];
 
   const services = [
@@ -43,14 +45,6 @@ export default function Home() {
       <header className={styles.nav}>
         <a className={styles.brand} href="#" aria-label="Zerogrid home">
           <Image
-            className={styles.brandLogoWordmark}
-            src="/zerogrid-logo-bg-remove.png"
-            alt="Zerogrid logo"
-            width={320}
-            height={72}
-            priority
-          />
-          <Image
             className={styles.brandLogoIcon}
             src="/zerogrid-logo-only.png"
             alt="Zerogrid logo icon"
@@ -58,6 +52,9 @@ export default function Home() {
             height={64}
             priority
           />
+          <span className={styles.brandName}>
+            Zero<span>grid</span>
+          </span>
         </a>
         <nav className={styles.navLinks}>
           {navItems.map((item) => (
@@ -87,15 +84,17 @@ export default function Home() {
         id="mobile-nav-menu"
         className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.mobileMenuOpen : ""}`}
       >
-        {navItems.map((item) => (
-          <a
-            key={item.label}
-            href={item.href}
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            {item.label}
-          </a>
-        ))}
+        <div className={styles.mobileMenuLinks}>
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
         <a
           href="#contact"
           className={styles.mobileMenuCta}

@@ -5,74 +5,78 @@
 }
 
 .nav {
-  width: min(1120px, calc(100% - 3rem));
-  padding: 0.6rem 0.7rem;
-  border: 1px solid #d9dee8;
+  width: min(1720px, calc(100% - 2.8rem));
+  padding: 0.34rem 0.4rem;
+  border: 1px solid #d8dbe2;
   border-radius: 999px;
-  background: rgba(245, 247, 252, 0.95);
-  backdrop-filter: blur(12px);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7), 0 8px 20px rgba(23, 40, 64, 0.07);
+  background: #d9dbe1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  top: 0.75rem;
+  top: 0.42rem;
   z-index: 30;
-  animation: riseIn 0.7s ease-out;
 }
 
 .brand {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
+  padding-left: 0.35rem;
   flex-shrink: 0;
 }
 
-.brandLogoWordmark {
-  width: 13.2rem;
-  height: 3.2rem;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 0.45rem;
+.brandLogoIcon {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
 }
 
-.brandLogoIcon {
-  display: none;
+.brandName {
+  font-family: var(--font-poppins), "Segoe UI", sans-serif;
+  font-size: clamp(1.5rem, 2.1vw, 2.2rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #1f2735;
+  font-weight: 500;
+}
+
+.brandName span {
+  color: #5e6df0;
 }
 
 .navLinks {
   display: flex;
   align-items: center;
-  gap: clamp(1rem, 2vw, 2.2rem);
+  gap: clamp(1rem, 2vw, 2.75rem);
   color: #2b3342;
-  font-weight: 500;
-  font-size: 1.03rem;
+  font-weight: 400;
+  font-size: clamp(0.95rem, 1vw, 1.15rem);
 }
 
 .navLinks a {
-  transition: color 0.2s ease, opacity 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .navLinks a:hover {
-  color: #5d6cf0;
+  color: #2b3342;
 }
 
 .navCta {
-  padding: 1rem 2.1rem;
+  padding: 1rem 3.05rem;
   border-radius: 999px;
-  background: linear-gradient(150deg, #7380fa 0%, #5f6fe8 100%);
+  background: #6473ef;
   color: #fff;
-  font-size: 1.03rem;
-  font-weight: 600;
+  font-size: clamp(0.98rem, 1vw, 1.2rem);
+  font-weight: 500;
   white-space: nowrap;
-  box-shadow: 0 10px 22px rgba(94, 110, 232, 0.34);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.2s ease;
 }
 
 .navCta:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 14px 24px rgba(94, 110, 232, 0.38);
+  background: #6070ea;
 }
 
 .hamburgerButton {
@@ -351,17 +355,17 @@
 
   .brand {
     max-width: none;
-  }
-
-  .brandLogoWordmark {
-    display: none;
+    padding-left: 0;
   }
 
   .brandLogoIcon {
-    display: block;
     width: 2.8rem;
     height: 2.8rem;
     object-fit: contain;
+  }
+
+  .brandName {
+    display: none;
   }
 
   .navLinks {
@@ -374,9 +378,9 @@
 
   .hamburgerButton {
     display: inline-flex;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 0.58rem;
+    width: 2.55rem;
+    height: 2.55rem;
+    border-radius: 0.65rem;
   }
 
   .mobileMenu {
@@ -385,12 +389,12 @@
     left: 50%;
     width: calc(100% - 3.4rem);
     margin: 0;
-    top: 4rem;
+    top: 4.3rem;
     border: 1px solid #d9dee8;
-    border-radius: 0.78rem;
-    background: rgba(245, 247, 252, 0.97);
-    box-shadow: 0 8px 20px rgba(23, 40, 64, 0.08);
-    overflow: hidden;
+    border-radius: 0.95rem;
+    background: rgba(236, 242, 251, 0.99);
+    box-shadow: 0 14px 28px rgba(23, 40, 64, 0.12);
+    overflow: auto;
     max-height: 0;
     opacity: 0;
     pointer-events: none;
@@ -400,32 +404,40 @@
   }
 
   .mobileMenuOpen {
-    max-height: 240px;
+    max-height: min(70vh, 430px);
     opacity: 1;
     pointer-events: auto;
     transform: translate(-50%, 0);
   }
 
-  .mobileMenu a {
-    padding: 0.84rem 1rem;
-    font-size: 0.9rem;
+  .mobileMenuLinks {
+    display: grid;
+    gap: 0.45rem;
+    padding: 0.65rem 0.45rem 0.2rem;
+  }
+
+  .mobileMenuLinks a {
+    display: block;
+    padding: 1rem 1rem;
+    font-size: 0.98rem;
     color: #243246;
-    border-top: 1px solid #e4e9f2;
+    border: 1px solid #e4e9f2;
+    border-radius: 0.65rem;
+    background: #ffffff;
   }
 
   .mobileMenuCta {
-    margin: 0.65rem;
+    display: block;
+    margin: 0.5rem 0.45rem 0.65rem;
+    padding: 0.95rem 1rem;
     border-radius: 0.62rem;
-    border-top: 0 !important;
+    border: 0 !important;
     background: linear-gradient(150deg, #7380fa 0%, #5f6fe8 100%);
     color: #fff !important;
     text-align: center;
     font-weight: 600;
+    font-size: 0.95rem;
     box-shadow: 0 8px 16px rgba(94, 110, 232, 0.28);
-  }
-
-  .mobileMenu a:first-child {
-    border-top: 0;
   }
 
   .main {
