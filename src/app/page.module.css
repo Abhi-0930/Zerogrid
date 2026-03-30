@@ -1,82 +1,124 @@
 .page {
   min-height: 100vh;
   color: var(--zg-text);
-  padding-top: 6.4rem;
+  padding-top: 0.75rem;
+  position: relative;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 150px;
+  background:
+    radial-gradient(circle, #d4d9e0 1.1px, transparent 1.1px) 0 0 / 20px 20px,
+    #eceff4;
+  z-index: 0;
 }
 
 .nav {
-  width: min(1720px, calc(100% - 2.8rem));
-  padding: 0.34rem 0.4rem;
-  border: 1px solid #d8dbe2;
+  width: min(1420px, calc(100% - 3rem));
+  margin: 0 auto;
+  padding: 0.62rem 0.75rem;
+  border: 1px solid #e1e5ec;
   border-radius: 999px;
-  background: #d9dbe1;
+  background: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 0.42rem;
+  position: relative;
   z-index: 30;
+  box-shadow: 0 1px 0 rgba(18, 26, 38, 0.04);
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding-left: 0.35rem;
+  gap: 0.65rem;
+  padding-left: 0.15rem;
   flex-shrink: 0;
 }
 
-.brandLogoIcon {
-  width: 3rem;
-  height: 3rem;
+.brandLogoWordmark {
+  display: block;
+  width: auto;
+  height: 2.6rem;
   object-fit: contain;
 }
 
-.brandName {
-  font-family: var(--font-poppins), "Segoe UI", sans-serif;
-  font-size: clamp(1.5rem, 2.1vw, 2.2rem);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: #1f2735;
-  font-weight: 500;
-}
-
-.brandName span {
-  color: #5e6df0;
+.brandLogoIcon {
+  width: 2.4rem;
+  height: 2.4rem;
+  object-fit: contain;
 }
 
 .navLinks {
   display: flex;
   align-items: center;
-  gap: clamp(1rem, 2vw, 2.75rem);
-  color: #2b3342;
-  font-weight: 400;
-  font-size: clamp(0.95rem, 1vw, 1.15rem);
+  gap: clamp(1rem, 2vw, 2.15rem);
+  color: #0e1420;
+  font-weight: 500;
+  font-size: 2rem;
 }
 
-.navLinks a {
-  transition: color 0.2s ease;
+.navItemLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  font-size: clamp(0.95rem, 1vw, 1.05rem);
+  transition: opacity 0.2s ease;
 }
 
-.navLinks a:hover {
-  color: #2b3342;
+.navItemLink:hover {
+  opacity: 0.7;
+}
+
+.navCaret {
+  font-size: 0.75rem;
+  color: #8b95a6;
+  transform: translateY(-1px);
+}
+
+.navBadge {
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
+  background: #ef4f3f;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 600;
 }
 
 .navCta {
-  padding: 1rem 3.05rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.4rem 0.45rem 0.4rem 1.55rem;
   border-radius: 999px;
-  background: #6473ef;
+  background: #050d1d;
   color: #fff;
-  font-size: clamp(0.98rem, 1vw, 1.2rem);
+  font-size: 1.65rem;
   font-weight: 500;
   white-space: nowrap;
-  transition: background 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .navCta:hover {
-  background: #6070ea;
+  opacity: 0.9;
+}
+
+.navCta span {
+  font-size: clamp(0.98rem, 1vw, 1.05rem);
+}
+
+.navCtaIcon {
+  display: grid;
+  place-items: center;
+  width: 2.15rem;
+  height: 2.15rem;
+  border-radius: 999px;
+  border: 1px solid #2c3547;
+  background: #192236;
+  font-size: 0.9rem !important;
 }
 
 .hamburgerButton {
@@ -122,6 +164,8 @@
   margin: 2.4rem auto 3rem;
   display: grid;
   gap: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .hero,
@@ -343,14 +387,17 @@
 
 @media (max-width: 760px) {
   .page {
-    padding-top: 5.3rem;
+    padding-top: 0.65rem;
+  }
+
+  .page::before {
+    height: 110px;
   }
 
   .nav {
-    width: calc(100% - 3.4rem);
-    padding: 0.4rem 0.5rem;
+    width: calc(100% - 1.7rem);
+    padding: 0.45rem 0.55rem;
     border-radius: 0.78rem;
-    top: 0.72rem;
   }
 
   .brand {
@@ -364,7 +411,7 @@
     object-fit: contain;
   }
 
-  .brandName {
+  .brandLogoWordmark {
     display: none;
   }
 
@@ -385,11 +432,11 @@
 
   .mobileMenu {
     display: grid;
-    position: fixed;
+    position: absolute;
     left: 50%;
-    width: calc(100% - 3.4rem);
+    width: calc(100% - 1.7rem);
     margin: 0;
-    top: 4.3rem;
+    top: 4.65rem;
     border: 1px solid #d9dee8;
     border-radius: 0.95rem;
     background: rgba(236, 242, 251, 0.99);

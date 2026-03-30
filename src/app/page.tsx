@@ -8,12 +8,10 @@ export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "Process", href: "#process" },
-    { label: "Services", href: "#services" },
-    { label: "Benefits", href: "#services" },
-    { label: "About", href: "#process" },
-    { label: "Plans", href: "#contact" },
-    { label: "FAQ", href: "#contact" },
+    { label: "Company", href: "#process", hasCaret: true },
+    { label: "Projects", href: "#services", badge: "New" },
+    { label: "Blog", href: "#contact" },
+    { label: "About us", href: "#contact" },
   ];
 
   const services = [
@@ -45,6 +43,14 @@ export default function Home() {
       <header className={styles.nav}>
         <a className={styles.brand} href="#" aria-label="Zerogrid home">
           <Image
+            className={styles.brandLogoWordmark}
+            src="/logo.png"
+            alt="Zerogrid logo"
+            width={300}
+            height={80}
+            priority
+          />
+          <Image
             className={styles.brandLogoIcon}
             src="/zerogrid-logo-only.png"
             alt="Zerogrid logo icon"
@@ -52,19 +58,19 @@ export default function Home() {
             height={64}
             priority
           />
-          <span className={styles.brandName}>
-            Zero<span>grid</span>
-          </span>
         </a>
         <nav className={styles.navLinks}>
           {navItems.map((item) => (
-            <a key={item.label} href={item.href}>
-              {item.label}
+            <a key={item.label} href={item.href} className={styles.navItemLink}>
+              <span>{item.label}</span>
+              {item.hasCaret ? <span className={styles.navCaret}>v</span> : null}
+              {item.badge ? <span className={styles.navBadge}>{item.badge}</span> : null}
             </a>
           ))}
         </nav>
         <a className={styles.navCta} href="#contact">
-          Book a call
+          <span>Get Template</span>
+          <span className={styles.navCtaIcon}>{"->"}</span>
         </a>
         <button
           className={`${styles.hamburgerButton} ${isMobileMenuOpen ? styles.hamburgerButtonOpen : ""}`}
@@ -100,7 +106,7 @@ export default function Home() {
           className={styles.mobileMenuCta}
           onClick={() => setIsMobileMenuOpen(false)}
         >
-          Book a call
+          Get Template
         </a>
       </nav>
 
